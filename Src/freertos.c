@@ -172,6 +172,15 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   initBoard();
   initPidTask();
+
+  //open timer
+  osTimerStart(myTimer01Handle,100);
+  osTimerStart(myTimer02Handle,100);
+  initLed(2);
+  led_register(0,LED_R_GPIO_Port,LED_R_Pin,GPIO_PIN_SET);
+  led_register(1,LED_G_GPIO_Port,LED_G_Pin,GPIO_PIN_SET);  
+  led_setStatus(0,1,1000);
+  led_setStatus(1,LED_OPT_NORMAL,2000);
   for(;;)
   {
 	pidTask();
@@ -200,7 +209,6 @@ void StartTaskShell(void *argument)
   
   for(;;)
   {
-	//shellTask(&shell);
 	rosSpinOnce();
     osDelay(100);
   }
@@ -211,7 +219,7 @@ void StartTaskShell(void *argument)
 void Callback01(void *argument)
 {
   /* USER CODE BEGIN Callback01 */
-  
+  LedLoop();
   /* USER CODE END Callback01 */
 }
 
@@ -219,7 +227,9 @@ void Callback01(void *argument)
 void Callback02(void *argument)
 {
   /* USER CODE BEGIN Callback02 */
-  
+  char buff[100] = {"hello ros node"};
+  sprintf(buff,"%s:%d",buff,HAL_GetTick());
+  rosSendPushData(buff);
   /* USER CODE END Callback02 */
 }
 

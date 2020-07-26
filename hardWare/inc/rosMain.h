@@ -9,10 +9,10 @@ extern "C" {
 
 
 
-void initRosNode(void);
-void rosSpinOnce(void);
-
-void getHandShankData(float *linex,float *angular);
+extern void initRosNode(void);
+extern void rosSpinOnce(void);
+extern void getHandShankData(float *linex,float *angular);
+extern void rosSendPushData(char *buff);
 #ifdef __cplusplus
 }
 #endif

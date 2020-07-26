@@ -29,6 +29,7 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -58,8 +59,14 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define MPU_INT_Pin GPIO_PIN_12
+#define MPU_INT_GPIO_Port GPIOB
 #define WIFI_RST_Pin GPIO_PIN_10
 #define WIFI_RST_GPIO_Port GPIOD
+#define LED_R_Pin GPIO_PIN_2
+#define LED_R_GPIO_Port GPIOD
+#define LED_G_Pin GPIO_PIN_3
+#define LED_G_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

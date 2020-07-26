@@ -15,10 +15,7 @@
 void initBoard()
 {
 //	HAL_TIM_Encoder_Start(&htim5,TIM_CHANNEL_ALL);
-//	HAL_TIM_Encoder_Start(&htim8,TIM_CHANNEL_ALL);
-
-	
-	
+//	HAL_TIM_Encoder_Start(&htim8,TIM_CHANNEL_ALL);	
 }
 /***********************************
 *func:

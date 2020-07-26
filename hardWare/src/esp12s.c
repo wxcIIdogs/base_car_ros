@@ -15,7 +15,7 @@
 ***********************************/
 void WifiRevData(uint8_t *buff,int32_t len)
 {
-	printf("%s",buff);
+	//printf("%s",buff);
 	for(int i = 0 ; i < len ; i ++)
 		Wifi_RxCallBack(buff[i]);
 	//shellHandler(&shell,buff[i]);

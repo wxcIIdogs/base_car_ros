@@ -1,0 +1,3 @@
+---- initEspWifi Matches (2 in 2 files) ----
+esp12s.h (E:\myself\robotCar\carPrj\hardWare\inc) line 36 : extern void initEspWifi(void);
+MX_FREERTOS_Init in freertos.c (E:\myself\robotCar\carPrj\Src) :   initEspWifi();
