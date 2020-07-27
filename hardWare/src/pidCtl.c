@@ -101,6 +101,7 @@ void initPidTask()
 	pid_init(&r_pid);
 	pid_set_gains(&l_pid,10,0,4);
 	pid_set_gains(&r_pid,10,0,4);
+	initMotorPwm();
 }
 /***********************************
 *func:

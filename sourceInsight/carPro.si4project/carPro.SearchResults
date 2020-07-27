@@ -1,3 +1,3 @@
----- initEspWifi Matches (2 in 2 files) ----
-esp12s.h (E:\myself\robotCar\carPrj\hardWare\inc) line 36 : extern void initEspWifi(void);
-MX_FREERTOS_Init in freertos.c (E:\myself\robotCar\carPrj\Src) :   initEspWifi();
+---- getCanMotorCalcSpeed Matches (2 in 1 files) ----
+pidCtl.c (E:\myself\robotCar\carPrj\hardWare\src) line 45 : void getCanMotorCalcSpeed(int16_t aimSpeed,int16_t swerveValue,int16_t *lSpeed,int16_t *rSpeed,int16_t MaxSpeed)
+pidTask in pidCtl.c (E:\myself\robotCar\carPrj\hardWare\src) : 		getCanMotorCalcSpeed(linex,argular,&l_speed,&r_speed,100);		

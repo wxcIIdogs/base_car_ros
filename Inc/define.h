@@ -31,6 +31,7 @@
 #include "pid.h"
 #include "pidCtl.h"
 #include "led.h"
+#include "motor.h"
 /********************begin define  *****************************************/
 
 
