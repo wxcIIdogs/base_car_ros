@@ -12,7 +12,8 @@ extern "C" {
 extern void initRosNode(void);
 extern void rosSpinOnce(void);
 extern void getHandShankData(float *linex,float *angular);
-extern void rosSendPushData(char *buff);
+extern void rosSendPushData(uint8_t buff);
+
 #ifdef __cplusplus
 }
 #endif

@@ -729,6 +729,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>stmflash</GroupName>
+          <Files>
+            <File>
+              <FileName>stm_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\hardWare\stm_flash\stm_flash.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>

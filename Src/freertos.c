@@ -227,9 +227,6 @@ void Callback01(void *argument)
 void Callback02(void *argument)
 {
   /* USER CODE BEGIN Callback02 */
-  char buff[100] = {"hello ros node"};
-  sprintf(buff,"%s:%d",buff,HAL_GetTick());
-  rosSendPushData(buff);
   /* USER CODE END Callback02 */
 }
 

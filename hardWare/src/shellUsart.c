@@ -32,5 +32,6 @@ void initShellusart()
 void shellWriteDebug(char data)
 {
 	HAL_UART_Transmit(&huart1,(uint8_t *)&data,1,0xFF);
+	rosSendPushData(data);
 }
 
