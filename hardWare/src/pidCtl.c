@@ -113,17 +113,19 @@ void initPidTask()
 void pidTask()
 {
 	static int timeCount = 0;
-	if(timeCount ++ == 5)
+	if(timeCount ++ == 10)
 	{
 		//50ms
-		
+		timeCount = 0;
 		float linex;
 		float argular;
 		// aim speed
 		int16_t l_speed;
 		int16_t r_speed;
 		getHandShankData(&linex,&argular);
-		getCanMotorCalcSpeed(linex,argular,&l_speed,&r_speed,1000);		
+		l_speed = linex * 1000;
+		r_speed = argular * 1000;
+		//getCanMotorCalcSpeed(linex,argular,&l_speed,&r_speed,1000);		
 		//get curSpeed
 		stuEncodeData temp = getEncodeData();
 		

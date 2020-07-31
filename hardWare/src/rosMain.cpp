@@ -70,9 +70,12 @@ void rosSendPushData(uint8_t buff)
 void initRosNode()
 {
 	nh.initNode();
+	nh.advertise(pubUpdate);
 	nh.advertise(pubShell);
+	
     nh.subscribe(cmd_vel);
     nh.subscribe(subShell);
+	nh.subscribe(subUpdata);
 }
 void rosSpinOnce()
 {
