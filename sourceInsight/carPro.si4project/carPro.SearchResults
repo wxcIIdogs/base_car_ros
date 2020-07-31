@@ -1,3 +1,0 @@
----- getCanMotorCalcSpeed Matches (2 in 1 files) ----
-pidCtl.c (E:\myself\robotCar\carPrj\hardWare\src) line 45 : void getCanMotorCalcSpeed(int16_t aimSpeed,int16_t swerveValue,int16_t *lSpeed,int16_t *rSpeed,int16_t MaxSpeed)
-pidTask in pidCtl.c (E:\myself\robotCar\carPrj\hardWare\src) : 		getCanMotorCalcSpeed(linex,argular,&l_speed,&r_speed,100);		
