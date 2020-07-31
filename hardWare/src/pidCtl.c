@@ -40,8 +40,8 @@ int8_t S16Symbol(int16_t x)
 	else
 		return -1;
 }
-static int LunW = 12;    //cm
-static double WHEEL = 3.14159*6.4/17;     //pai  lun tai zhi jing     jian shu bi
+static int LunW = 54;    //cm
+static double WHEEL = 3.14159*30.4/32;     //pai  lun tai zhi jing     jian shu bi
 void getCanMotorCalcSpeed(int16_t aimSpeed,int16_t swerveValue,int16_t *lSpeed,int16_t *rSpeed,int16_t MaxSpeed)
 {
 	double V1,V2,Vin,Vout;
@@ -53,8 +53,8 @@ void getCanMotorCalcSpeed(int16_t aimSpeed,int16_t swerveValue,int16_t *lSpeed,i
 	if(aimSpeed == 0)
 	{
 		//is only swerve
-		*lSpeed = (swerveValue * MaxSpeed/1);
-		*rSpeed = (swerveValue * MaxSpeed/1) * -1;
+		*lSpeed = (swerveValue * MaxSpeed/128);
+		*rSpeed = (swerveValue * MaxSpeed/128) * -1;
 		return;
 	}
 	//R= L*Vin/(Vout-Vin)
@@ -113,19 +113,17 @@ void initPidTask()
 void pidTask()
 {
 	static int timeCount = 0;
-	if(timeCount ++ == 10)
+	if(timeCount ++ == 5)
 	{
 		//50ms
-		timeCount = 0;
+		
 		float linex;
 		float argular;
 		// aim speed
 		int16_t l_speed;
 		int16_t r_speed;
 		getHandShankData(&linex,&argular);
-		l_speed = linex * 1000;
-		r_speed = argular * 1000;
-		//getCanMotorCalcSpeed(linex,argular,&l_speed,&r_speed,1000);		
+		getCanMotorCalcSpeed(linex,argular,&l_speed,&r_speed,100);		
 		//get curSpeed
 		stuEncodeData temp = getEncodeData();
 		
@@ -134,12 +132,7 @@ void pidTask()
 		//motor_pwm = pid_process(&pid, error);
 		
 		//set motor
-		setPwmSetValue(0, l_speed);
-		setPwmSetValue(1, l_speed);		
-
-		setPwmSetValue(2, r_speed);		
-		setPwmSetValue(3, r_speed);		
-				
+		
 	}
 }
 
